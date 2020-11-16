@@ -142,6 +142,7 @@
 		45D6FBCF1BB27747002ACC9C /* BRAComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6FBCA1BB212A2002ACC9C /* BRAComments.m */; };
 		45D6FBD41BB27833002ACC9C /* BRACalcChainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6FBD31BB27833002ACC9C /* BRACalcChainCell.m */; };
 		45D6FBD81BB279A5002ACC9C /* BRAComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6FBD71BB279A5002ACC9C /* BRAComment.m */; };
+		91736A532561E94700F41317 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91736A512561E94700F41317 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +304,7 @@
 		45D6FBD31BB27833002ACC9C /* BRACalcChainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRACalcChainCell.m; sourceTree = "<group>"; };
 		45D6FBD61BB27970002ACC9C /* BRAComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRAComment.h; sourceTree = "<group>"; };
 		45D6FBD71BB279A5002ACC9C /* BRAComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAComment.m; sourceTree = "<group>"; };
+		91736A512561E94700F41317 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				455542A61C492C6A00EAB8FE /* BRAPlatformSpecificDefines.h */,
+				91736A512561E94700F41317 /* Package.swift */,
 				45B6E23C1A148F7500288A78 /* XlsxReaderWriter */,
 				45B6E2491A148F7500288A78 /* XlsxReaderWriterTests */,
 				22156D591C46B42500BB5779 /* XlsxReaderWriter Mac */,
@@ -1005,9 +1008,11 @@
 				TargetAttributes = {
 					22156D571C46B42500BB5779 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 1220;
 					};
 					45B6E2391A148F7500288A78 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 1220;
 					};
 					45B6E2441A148F7500288A78 = {
 						CreatedOnToolsVersion = 6.1;
@@ -1019,6 +1024,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 45B6E2311A148F7500288A78;
@@ -1123,6 +1129,7 @@
 				22156D811C46B5DC00BB5779 /* BRAOpenXmlSubElement.m in Sources */,
 				22156D821C46B5DC00BB5779 /* BRAOpenXmlElement.m in Sources */,
 				22225F351C481E2500256993 /* NativeFont+BoldItalic.m in Sources */,
+				91736A532561E94700F41317 /* Package.swift in Sources */,
 				22156D831C46B5DC00BB5779 /* BRAElementWithRelationships.m in Sources */,
 				22156D841C46B5DC00BB5779 /* BRARelationship.m in Sources */,
 				22156D851C46B5DC00BB5779 /* BRARelationships.m in Sources */,
@@ -1208,6 +1215,7 @@
 		22156D5E1C46B42500BB5779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1233,6 +1241,8 @@
 				PRODUCT_NAME = XlsxReaderWriter;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1241,6 +1251,7 @@
 		22156D5F1C46B42500BB5779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1266,6 +1277,7 @@
 				PRODUCT_NAME = XlsxReaderWriter;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1310,6 +1322,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1344,6 +1357,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1352,8 +1366,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/XlsxReaderWriter/iOsOnly";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1361,6 +1377,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ThirdParties/**";
 			};
 			name = Debug;
@@ -1369,8 +1387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/XlsxReaderWriter/iOsOnly";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1378,6 +1398,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ThirdParties/**";
 			};
 			name = Release;
